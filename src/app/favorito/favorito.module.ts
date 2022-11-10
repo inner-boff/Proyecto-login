@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FavoritoPageRoutingModule } from './favorito-routing.module';
 
 import { FavoritoPage } from './favorito.page';
+//import { GaleriaFotosService } from '../services/galeria-fotos.service';
 
 @NgModule({
   imports: [

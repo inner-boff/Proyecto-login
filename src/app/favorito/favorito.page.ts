@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { Favorito } from '../models/favorito.model';
 import { FavoritosService } from '../services/favoritos.service';
+import { GaleriaFotosService } from '../services/galeria-fotos.service';
 import { Proveedor1Service } from '../services/proveedor1.service';
 
 @Component({
@@ -13,13 +14,15 @@ import { Proveedor1Service } from '../services/proveedor1.service';
 export class FavoritoPage implements OnInit {
 
   public listaFav: Favorito[];
+  //galleryType = "regular"
 
   constructor(
     public favoritos: FavoritosService,
     public alertController: AlertController,
     public loadingController: LoadingController,
     public router: Router,
-    public proveedor: Proveedor1Service
+    public proveedor: Proveedor1Service,
+    public galeriaFotos: GaleriaFotosService
   ) { }
 
   ngOnInit() {
@@ -60,5 +63,11 @@ export class FavoritoPage implements OnInit {
     this.proveedor.idLugar = id;
     this.proveedor.nombreLugar = nombre;
     this.router.navigateByUrl('lugar', { replaceUrl: true });
+  }  
+
+  abrirGaleriaDelDispositivo(){
+    console.log("abriendo galería del dispositivo");
+    this.galeriaFotos.getLibreriaFotos();
+    
   }  
 }

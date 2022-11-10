@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http'; //Para conectarnos con 
 import { Proveedor1Service } from './services/proveedor1.service';
 import { AngularFireModule } from '@angular/fire/compat';
 
+// Para acceder a las fotos
+import { PhotoLibrary } from "@awesome-cordova-plugins/photo-library/ngx";
 
 
 @NgModule({
@@ -36,7 +38,10 @@ import { AngularFireModule } from '@angular/fire/compat';
     AngularFireAuthModule
    
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Proveedor1Service],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Proveedor1Service, 
+  // Para acceder a las fotos
+  PhotoLibrary
+],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

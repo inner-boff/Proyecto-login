@@ -3,32 +3,63 @@
     <ion-title>Favorito</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-buttons>  
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let favorito of listaFav">
+      <ion-item>
+        <ion-label (click)="verLugar(favorito.idLugar, favorito.nombreLugar)"
+          >{{favorito.nombreLugar}}</ion-label
+        >
+      </ion-item>
 
-  <ion-list >
-    <ion-item-sliding  *ngFor="let favorito of listaFav">
-    <ion-item >
-      <ion-label (click)="verLugar(favorito.idLugar, favorito.nombreLugar)">{{favorito.nombreLugar}}</ion-label>
-    </ion-item>
-
-    <ion-item-options side="end">
-      <ion-item-option color="danger" (click)="eliminarLista(favorito)">Eliminar</ion-item-option>
-    </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="eliminarLista(favorito)"
+          >Eliminar</ion-item-option
+        >
+      </ion-item-options>
     </ion-item-sliding>
 
     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-      <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
-        refreshingText="Refreshing...">
-      </ion-refresher-content>    
-    </ion-refresher>    
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing..."
+      >
+      </ion-refresher-content>
+    </ion-refresher>
+  </ion-list>
 
-  </ion-list>  
 
+  <ion-button fill="outline" (click)="abrirGaleriaDelDispositivo()">
+    subir fotos
+    <ion-icon slot="end" name="images-outline"></ion-icon>
+  </ion-button>
 
+  <!-- <h2>galería de imágenes</h2> -->
+  <!-- muestra una selección de imágenes de la carpeta assets -->
 
+  <!-- <ion-segment [(NgModel)]="galleryType">-->
+  <!-- <ion-segment>
+    <ion-segment-button value="regular">Normal</ion-segment-button>
+    <ion-segment-button value="pinterest">Tipo Pinterest</ion-segment-button>
+  </ion-segment>
 
-</ion-content>
+  <div ngSwitch="galleryType">
+    <ion-grid>
+      <ion-row> -->
+        <!-- <ion-col col-6 col-md-4 col-xl-3 *ngFor="let image of [1,2,3,4,5]"> -->
+        <!-- <ion-col *ngFor="let image of [1,2,3,4,5]">
+          <div
+            class="image-container"
+            [style.background-image]="'url(assets/img/' + image + '.JPG)'"
+          ></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content> -->
