@@ -21,23 +21,14 @@ import { Proveedor1Service } from './services/proveedor1.service';
 import { AngularFireModule } from '@angular/fire/compat';
 
 
-// Para poder usar los servicios que traen la info de la API
-import { HttpClientModule } from '@angular/common/http'; //Para conectarnos con un cliente externo a través de HTTP
-import { Proveedor1Service } from './services/proveedor1.service';
-
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-<<<<<<< HEAD
-    AppRoutingModule, HttpClientModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-=======
     AppRoutingModule, HttpClientModule,AngularFireAuthModule, 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),//esto es lo que nos permite que nuestro formulario funcione
->>>>>>> 137cd12e23453b99a926184f65f9e4cc6cc48c31
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),

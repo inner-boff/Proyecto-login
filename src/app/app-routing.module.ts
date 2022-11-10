@@ -10,28 +10,14 @@ import {
 
 //import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 137cd12e23453b99a926184f65f9e4cc6cc48c31
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 const redirectLoggedInToLogin = () => redirectLoggedInTo(['login'])
 const redirectLoggedInToRecuperar = () => redirectLoggedInTo(['recuperar-usuario'])
-<<<<<<< HEAD
-// para ir a clubes de jazz
-const redirectLoggedInToClubesJazz = () => redirectLoggedInTo(['clubes-jazz'])
-
-
-
-
-
-=======
 // para ir a lugar
 const redirectLoggedInToLugar = () => redirectLoggedInTo(['lugar'])
 // para ir a listaLugar
 const redirectLoggedInToListaLugar = () => redirectLoggedInTo(['lista-lugar'])
->>>>>>> 137cd12e23453b99a926184f65f9e4cc6cc48c31
 
 // Se cambia el login a la primera posición para que la app arranque allí.
 const routes: Routes = [
@@ -46,11 +32,6 @@ const routes: Routes = [
     ...canActivate(redirectUnauthorizedToLogin),
     // Si se está logueado, puede redirigirte a clubes de jazz
     //...canActivate(redirectLoggedInToClubesJazz)
-<<<<<<< HEAD
-
-    
-=======
->>>>>>> 137cd12e23453b99a926184f65f9e4cc6cc48c31
   },
   {
     path: 'registro',
@@ -63,16 +44,6 @@ const routes: Routes = [
     loadChildren: () => import('./recuperar-usuario/recuperar-usuario.module').then( m => m.RecuperarUsuarioPageModule),
     
   },
-
-  {
-    path: 'clubes-jazz',
-    loadChildren: () => import('./clubes-jazz/clubes-jazz.module').then( m => m.ClubesJazzPageModule),
-
-    // los logueados pueden ir a clubes de jazz
-    //... canActivate(redirectLoggedInToClubesJazz)
-    
-  },
-
   {
     path: 'lista-lugar',
     loadChildren: () => import('./lista-lugar/lista-lugar.module').then( m => m.ListaLugarPageModule)
@@ -83,10 +54,14 @@ const routes: Routes = [
     
   },
   {
+    path: 'favorito',
+    loadChildren: () => import('./favorito/favorito.module').then( m => m.FavoritoPageModule)
+  },  
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
-  }
+  },
 ];
 @NgModule({
   imports: [

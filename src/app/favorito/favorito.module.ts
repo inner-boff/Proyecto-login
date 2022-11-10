@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ClubesJazzPageRoutingModule } from './clubes-jazz-routing.module';
+import { FavoritoPageRoutingModule } from './favorito-routing.module';
 
-import { ClubesJazzPage } from './clubes-jazz.page';
+import { FavoritoPage } from './favorito.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ClubesJazzPageRoutingModule
+    FavoritoPageRoutingModule
   ],
-  declarations: [ClubesJazzPage]
+  declarations: [FavoritoPage]
 })
-export class ClubesJazzPageModule {}
+export class FavoritoPageModule {}
