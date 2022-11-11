@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 import { FavoritosService } from '../services/favoritos.service';
 // para poder tener los datos de la api
 import { Proveedor1Service } from '../services/proveedor1.service';
@@ -49,7 +50,8 @@ export class LugarPage implements OnInit {
   constructor(
     public proveedor: Proveedor1Service,
     public toastController: ToastController,
-    public favoritos: FavoritosService
+    public favoritos: FavoritosService,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -154,9 +156,9 @@ export class LugarPage implements OnInit {
   async guardarFavs() {
     if (this.boton == true) {
       //this.favoritos.crearLista(this.proveedor.idLugar, this.proveedor.nombreLugar);
-      let creadaOk = this.favoritos.crearLista(this.proveedor.idLugar, this.proveedor.nombreLugar);
+      let creadaOk = this.favoritos.crearLista(this.proveedor.idLugar, this.proveedor.nombreLugar, this.authService.email);
       if (creadaOk) { //Se verifica si la variable tiene un valor, es decir, que fue creada
-        console.log("Lista guardada bro: " + this.favoritos.favoritos);
+        console.log("Lista guardada bro: " + this.favoritos.favoritosDelUsuario);
       }     
     }
     else {

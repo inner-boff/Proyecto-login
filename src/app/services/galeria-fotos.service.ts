@@ -8,8 +8,13 @@ export class GaleriaFotosService {
 
   constructor(
     private photoLibrary: PhotoLibrary
-  ) {
+  ) {}
 
+  
+   getLibreriaFotos(){
+
+    console.log("llamando getLibrary");
+    
     this.photoLibrary.requestAuthorization().then(() => {
 
       this.photoLibrary.getLibrary().subscribe({
@@ -33,15 +38,6 @@ export class GaleriaFotosService {
       });
     })
     .catch(err => console.log('No hay permisos para realizar esta acción'));
-   }
-
-  
-   getLibreriaFotos(){
-    console.log("llamando getLibrary");
-    
-
-    //this.photoLibrary.getLibrary();
-    
   }  
   
 }

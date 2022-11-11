@@ -9,7 +9,8 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding *ngFor="let favorito of listaFav">
+    <ion-item-sliding *ngFor="let favorito of nuevoListado">
+      <!-- <ion-item-sliding *ngFor="let favorito of nuevoListado"> -->
       <ion-item>
         <ion-label (click)="verLugar(favorito.idLugar, favorito.nombreLugar)"
           >{{favorito.nombreLugar}}</ion-label
@@ -39,27 +40,3 @@
     subir fotos
     <ion-icon slot="end" name="images-outline"></ion-icon>
   </ion-button>
-
-  <!-- <h2>galería de imágenes</h2> -->
-  <!-- muestra una selección de imágenes de la carpeta assets -->
-
-  <!-- <ion-segment [(NgModel)]="galleryType">-->
-  <!-- <ion-segment>
-    <ion-segment-button value="regular">Normal</ion-segment-button>
-    <ion-segment-button value="pinterest">Tipo Pinterest</ion-segment-button>
-  </ion-segment>
-
-  <div ngSwitch="galleryType">
-    <ion-grid>
-      <ion-row> -->
-        <!-- <ion-col col-6 col-md-4 col-xl-3 *ngFor="let image of [1,2,3,4,5]"> -->
-        <!-- <ion-col *ngFor="let image of [1,2,3,4,5]">
-          <div
-            class="image-container"
-            [style.background-image]="'url(assets/img/' + image + '.JPG)'"
-          ></div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-</ion-content> -->

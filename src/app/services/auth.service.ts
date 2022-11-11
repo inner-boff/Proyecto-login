@@ -8,7 +8,9 @@ import { AlertController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class AuthService {
-  // complentamos el constructor
+
+  public email: any;
+  
   constructor(
 
     private auth: Auth,

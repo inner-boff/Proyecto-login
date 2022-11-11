@@ -22,6 +22,7 @@ export class LoginPage implements OnInit {
 
   // Para acceder a los campos del fromulrio:
   get email() {
+    this.authService.email = this.credentials.value.email; //nuevo
     return this.credentials.get('email');
   }
 
